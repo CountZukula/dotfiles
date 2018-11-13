@@ -22,3 +22,8 @@ ln -s ~/.dotfiles/rofi ~/.config/rofi
 ```
 git subtree add --prefix polybar/polybar-scripts https://github.com/x70b1/polybar-scripts.git master --squash
 ```
+
+Also, using one of the scripts there, so have to add execute privilege:
+```
+chmod u+x updates-arch.sh
+```
