@@ -27,3 +27,10 @@ Also, using one of the scripts there, so have to add execute privilege:
 ```
 chmod u+x updates-arch.sh
 ```
+
+## Italics in terminal
+
+Create a `~/.terminfo/` entry so we can use the new TERM info.
+```
+tic xterm-256color-italic.terminfo
+```

@@ -214,6 +214,14 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+# generic switch
+#bindcode 49+34 workspace $ws9
+#bindsym $mod+grave workspace $ws9
+#bindsym $mod+shift+grave workspace $ws9
+# check this out: https://unix.stackexchange.com/questions/338228/i3wm-more-than-10-workspaces-with-double-modifier-key#339985
+bindsym $mod+grave exec i3-input -F 'workspace %s' -P 'go to workspace: '
+bindsym $mod+shift+grave exec i3-input -F 'move container to workspace %s' -P 'move to workspace: '
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2

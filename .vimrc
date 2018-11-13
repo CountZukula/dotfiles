@@ -39,3 +39,5 @@ filetype plugin indent on    " required
 "
 " This should set markdown syntax for all .md files
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+highlight Comment cterm=italic

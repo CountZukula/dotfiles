@@ -17,7 +17,8 @@ zsh_wifi_signal(){
 #                                   Variables
 # =============================================================================
 # Common ENV variables
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
+export TERM="xterm-256color-italic"
 export SHELL="/bin/zsh"
 export EDITOR="nvim"
 
@@ -27,7 +28,7 @@ export LC_ALL="en_US.UTF-8"
 
 # History
 export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=10000
+export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 
 #export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
@@ -88,7 +89,7 @@ alias time='time -p ' # -p for POSIX output
 source ~/.zplug/init.zsh
 
 # zplug
-#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 #zplug 'themes/sorin', from:oh-my-zsh, as:theme
 
 # oh-my-zsh
@@ -530,8 +531,9 @@ if zplug check "bhilburn/powerlevel9k"; then
 
     #P9K_LEFT_SUBSEGMENT_SEPARATOR="%F{$DEFAULT_BACKGROUND}\ue0b0%f"
     #P9K_RIGHT_SUBSEGMENT_SEPARATOR="%F{$DEFAULT_BACKGROUND}\ue0b2%f"
-    P9K_LEFT_SUBSEGMENT_SEPARATOR_ICON="%F{232}\uE0BD%f"
-    P9K_RIGHT_SUBSEGMENT_SEPARATOR_ICON="%F{232}\uE0BD%f"
+    # some nice ones...:   
+    P9K_LEFT_SUBSEGMENT_SEPARATOR_ICON="%F{232}%f"
+    P9K_RIGHT_SUBSEGMENT_SEPARATOR_ICON="%F{232}%f"
     #P9K_RIGHT_SUBSEGMENT_SEPARATOR="%F{000}%f"
     #P9K_LEFT_SUBSEGMENT_SEPARATOR="%F{000}／%f" # 
     #P9K_RIGHT_SUBSEGMENT_SEPARATOR="%F{000}／%f" #
@@ -542,8 +544,9 @@ if zplug check "bhilburn/powerlevel9k"; then
 
     #P9K_LEFT_SEGMENT_SEPARATOR="\uE0B4"
     #P9K_RIGHT_SEGMENT_SEPARATOR="\uE0B6"
-    P9K_LEFT_SEGMENT_SEPARATOR_ICON='▓▒░'
-    P9K_RIGHT_SEGMENT_SEPARATOR_ICON='░▒▓'
+    # some nice ones:  ▓▒░ ▓▒░ ░▒▓
+    P9K_LEFT_SEGMENT_SEPARATOR_ICON=''
+    P9K_RIGHT_SEGMENT_SEPARATOR_ICON=''
     #P9K_LEFT_SEGMENT_SEPARATOR="\uE0BC\u200A"
     #P9K_RIGHT_SEGMENT_SEPARATOR="\u200A\uE0BA"
     #P9K_LEFT_SEGMENT_SEPARATOR="\uE0BC"
@@ -557,10 +560,10 @@ if zplug check "bhilburn/powerlevel9k"; then
     P9K_STATUS_VERBOSE=true
     P9K_STATUS_CROSS=true
     P9K_PROMPT_ADD_NEWLINE=true
-
+    # nice ones: ➜   壟 ﬌
     P9K_MULTILINE_FIRST_PROMPT_PREFIX_ICON="%F{$PROMPT_COLOR}%f"
-    P9K_MULTILINE_LAST_PROMPT_PREFIX_ICON="%F{$PROMPT_COLOR}➜ %f"
-    #P9K_MULTILINE_LAST_PROMPT_PREFIX_ICON="%F{$PROMPT_COLOR}⇢ ➜  %f"
+    P9K_MULTILINE_LAST_PROMPT_PREFIX_ICON="%F{$PROMPT_COLOR} ﬌ %f"
+    #P9K_MULTILINE_LAST_PROMPT_PREFIX_ICON="%F{$PROMPT_COLOR}⇢ ﬌  %f"
     #P9K_MULTILINE_LAST_PROMPT_PREFIX_ICON="%F{$PROMPT_COLOR} ┄⇢ %f"
 
     # P9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir_writable dir vcs)
