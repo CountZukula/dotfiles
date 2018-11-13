@@ -18,7 +18,7 @@ ln -s ~/.dotfiles/rofi ~/.config/rofi
 
 ## Subtrees
 
-# polybar-scripts
+### polybar-scripts
 ```
 git subtree add --prefix polybar/polybar-scripts https://github.com/x70b1/polybar-scripts.git master --squash
 ```
