@@ -15,3 +15,10 @@ ln -s ~/.dotfiles/qutebrowser ~/.config/qutebrowser
 ln -s ~/.dotfiles/reloadcompton.sh ~/.config/reloadcompton.sh
 ln -s ~/.dotfiles/rofi ~/.config/rofi
 ```
+
+## Subtrees
+
+# polybar-scripts
+```
+git subtree add --prefix polybar/polybar-scripts https://github.com/x70b1/polybar-scripts.git master --squash
+```
