@@ -124,6 +124,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.icon-color}
 format-prefix-underline = ${colors.underline-keyboard}
 
+; layout, number, name
 label-layout = %layout%
 label-layout-underline = ${colors.underline-keyboard}
 
@@ -183,6 +184,8 @@ wrapping-scroll = false
 pin-workspaces = true
 
 ; using siji icons... see view.sh for codes
+; not using siji anymore, check out nerdfonts.com!
+;  
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
@@ -193,7 +196,7 @@ ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;﬐
 ws-icon-9 = 10;
-ws-icon-default = 
+ws-icon-default = 
 
 ; Whenever the 'move' changes... like 'resize', ...
 label-mode-padding = 2
