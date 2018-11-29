@@ -46,14 +46,19 @@ underline-i3-unfocused = ${xrdb:color8:#222}
 
 [bar/general]
 width = 100%
-; this is for every module
+
+; spaces before/after each module
 module-margin-left = 1
 module-margin-right = 1
+
 height = 27
 fixed-center = true 
 line-size = 3
 line-color = #f00
+
+; rounded corners of the bar
 radius = 0.0
+
 ;this makes sure that i3 doesn't reposition everything when polybar becomes active... is shit
 ;override-redirect = false
 ;wm-restack = i3
@@ -62,8 +67,9 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 border-color = ${colors.background}
 
-padding-left = 1
-padding-right = 1
+; spaces on begin/end of bar
+padding-left = 2
+padding-right = 2
 
 ; set the bar fonts
 ;font-0 = fixed:pixelsize=10;1
@@ -86,25 +92,23 @@ monitor = ${env:MONITOR:eDP-1}
 ;border-left-size = 16 
 ;border-right-size = 16 
 
-border-bottom-size = 3
-
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-left = i3  
 modules-center = temperature battery xkeyboard memory cpu eth filesystem updates-arch
 modules-right = wlan powermenu 
 
+; TRAY MANAGEMENT
 ;tray-position = right
 tray-position = ${env:TRAY_POSITION:none}
-tray-padding = 2
 ;tray-transparent = true
 tray-detached = false
-tray-maxsize = 16
+tray-maxsize = 16 
 ;tray-background = ${colors.background-alt}
 ;this makes sure that the tray doesn't run off to the right of the monitor - only enable this when the bar's width is a bit off
-tray-offset-x = 0
+tray-offset-x = 0 
 tray-offset-y = 27
-;tray-padding = 0
-tray-scale = 1.0
+tray-padding = 2
+tray-scale = 1.0 
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -116,13 +120,8 @@ cursor-scroll = pointer
 [bar/secondary]
 inherit = bar/general
 monitor = ${env:MONITOR:eDP-1}
-;height = 27
 ;offset-x = 2%
 ;offset-y = 1%
-
-border-bottom-size = 3
-padding-left = 0 
-padding-right = 2
 
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-right = pulseaudio
@@ -397,7 +396,7 @@ date-alt =
 time = %H:%M:%S
 time-alt = %H:%M
 
-format-prefix = "  "
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 ;format-underline = ${colors.underline-date}
@@ -551,8 +550,8 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+;margin-top = 5
+;margin-bottom = 5
 
 ; vim:ft=dosini
 
