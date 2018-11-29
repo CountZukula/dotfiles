@@ -6,7 +6,6 @@
 ;   The README contains alot of information
 ;
 ;=====================================================
-
 [colors]
 background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
@@ -16,7 +15,6 @@ icon-color = ${xrdb:color4:#FF2}
 primary = ${xrdb:color1:#222}
 alert = ${xrdb:color10:#222}
 secondary = ${xrdb:color10:#222}
-
 ; let's get some colors from xrdb (pywal)
 col0 = ${xrdb:color0:#222}
 col1 = ${xrdb:color1:#222}
@@ -32,12 +30,10 @@ col10 = ${xrdb:color10:#222}
 col11 = ${xrdb:color11:#222}
 col12 = ${xrdb:color12:#222}
 col13 = ${xrdb:color13:#222}
-
 gruvbg = ${xrdb:background:#222}
 gruvbghard = ${xrdb:backgroundhard:#222}
 gruvbgsoft = ${xrdb:backgroundsoft:#222}
 gruvfg = ${xrdb:foreground:#222}
-
 ; control some of the later elements from here, nice and tidy
 underline-cpu = ${xrdb:color2:#222}
 underline-memory = ${xrdb:color3:#222}
@@ -48,47 +44,57 @@ underline-keyboard = ${xrdb:color7:#222}
 underline-i3-focused = ${xrdb:color10:#222}
 underline-i3-unfocused = ${xrdb:color8:#222}
 
-[bar/example]
-monitor = ${env:MONITOR:eDP-1}
+[bar/general]
 width = 100%
+; this is for every module
+module-margin-left = 1
+module-margin-right = 1
 height = 27
-;offset-x = 2%
-;offset-y = 1%
-radius = 0.0
 fixed-center = true 
 line-size = 3
 line-color = #f00
-
+radius = 0.0
+;this makes sure that i3 doesn't reposition everything when polybar becomes active... is shit
+;override-redirect = false
+;wm-restack = i3
 ; all the bar colors
 background = ${colors.background}
 foreground = ${colors.foreground}
 border-color = ${colors.background}
 
+padding-left = 1
+padding-right = 1
+
+; set the bar fonts
+;font-0 = fixed:pixelsize=10;1
+;font-0 = "Wuncon Siji:pixelsize=15;1"
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = "Inconsolata\ For\ Powerline:pixelsize=10;1"
+font-0 = FuraCode Nerd Font:pixelsize=11;1
+
+; override pointers 
+cursor-click = pointer
+cursor-scroll = pointer
+
+[bar/example]
+inherit = bar/general
+monitor = ${env:MONITOR:eDP-1}
+;offset-x = 2%
+;offset-y = 1%
 ;i'm faking the left and right margins with a fat border. i'm helpless
 ;border-size = 20
 ;border-left-size = 16 
 ;border-right-size = 16 
 
 border-bottom-size = 3
-padding-left = 0 
-padding-right = 2
-; this is for every module
-module-margin-left = 1
-module-margin-right = 2
-
-; set the bar fonts
-;font-0 = fixed:pixelsize=10;1
-;font-0 = "Wuncon Siji:pixelsize=15;1"
-font-0 = FuraCode Nerd Font:pixelsize=11;1
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = "Inconsolata\ For\ Powerline:pixelsize=10;1"
 
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-left = i3  
-modules-center = date temperature battery xkeyboard memory cpu eth filesystem updates-arch
-modules-right = pulseaudio wlan powermenu 
+modules-center = temperature battery xkeyboard memory cpu eth filesystem updates-arch
+modules-right = wlan powermenu 
 
-tray-position = right
+;tray-position = right
+tray-position = ${env:TRAY_POSITION:none}
 tray-padding = 2
 ;tray-transparent = true
 tray-detached = false
@@ -96,13 +102,9 @@ tray-maxsize = 16
 ;tray-background = ${colors.background-alt}
 ;this makes sure that the tray doesn't run off to the right of the monitor - only enable this when the bar's width is a bit off
 tray-offset-x = 0
-tray-offset-y = 0
+tray-offset-y = 27
 ;tray-padding = 0
 tray-scale = 1.0
-
-;this makes sure that i3 doesn't reposition everything when polybar becomes active... is shit
-override-redirect = false
-wm-restack = i3
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -111,6 +113,32 @@ cursor-click = pointer
 ;cursor-scroll = ns-resize
 cursor-scroll = pointer
 
+[bar/secondary]
+inherit = bar/general
+monitor = ${env:MONITOR:eDP-1}
+;height = 27
+;offset-x = 2%
+;offset-y = 1%
+
+border-bottom-size = 3
+padding-left = 0 
+padding-right = 2
+
+;unused modules - mpd xbacklight backlight-acpi alsa 
+modules-right = pulseaudio
+modules-center = player-mpris-tail
+modules-left = date 
+
+;this makes sure that i3 doesn't reposition everything when polybar becomes active... is shit
+override-redirect = false
+wm-restack = i3
+
+
+[module/player-mpris-tail]
+type = custom/script
+exec = /home/jnieland/.config/polybar/polybar-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {title}' --icon-playing  --icon-paused  --icon-stopped  --icon-none ﱙ
+tail = true
+label = %output%
 
 [module/xwindow]
 type = internal/xwindow
@@ -369,18 +397,18 @@ date-alt =
 time = %H:%M:%S
 time-alt = %H:%M
 
-format-prefix = 
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
-format-underline = ${colors.underline-date}
+;format-underline = ${colors.underline-date}
 
-label = %date% %time%
+label = "%date% %time%"
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 ; the muted symbol comes from siji font (check the 'view.sh' script for altcodes)
@@ -483,7 +511,7 @@ label-warn-foreground = ${colors.secondary}
 ;found this with following command
 ; for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 ;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp2_input
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp2_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input
 ramp-0 = 
 ramp-1 =  
 ramp-2 = 
@@ -491,11 +519,8 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
-
 expand-right = true
-
 format-spacing = 1
-
 label-open = ⏻
 label-open-foreground = ${colors.secondary}
 label-close = " back"
