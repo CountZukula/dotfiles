@@ -60,8 +60,8 @@ line-color = #f00
 radius = 0.0
 
 ;this makes sure that i3 doesn't reposition everything when polybar becomes active... is shit
-;override-redirect = false
-;wm-restack = i3
+override-redirect = false
+wm-restack = i3
 ; all the bar colors
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -127,11 +127,6 @@ monitor = ${env:MONITOR:eDP-1}
 modules-right = pulseaudio
 modules-center = player-mpris-tail
 modules-left = date 
-
-;this makes sure that i3 doesn't reposition everything when polybar becomes active... is shit
-override-redirect = false
-wm-restack = i3
-
 
 [module/player-mpris-tail]
 type = custom/script
