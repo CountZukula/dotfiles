@@ -510,7 +510,8 @@ label-warn-foreground = ${colors.secondary}
 ;found this with following command
 ; for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 ;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp2_input
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input
+hwmon-path = ${env:HWMON_PATH:/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input}
+;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp2_input
 ramp-0 = 
 ramp-1 =  
 ramp-2 = 
