@@ -130,7 +130,7 @@ modules-left = date
 
 [module/player-mpris-tail]
 type = custom/script
-exec = /home/jnieland/.config/polybar/polybar-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {title}' --icon-playing  --icon-paused  --icon-stopped  --icon-none ﱙ
+exec = ~/.config/polybar/polybar-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {title}' --icon-playing  --icon-paused  --icon-stopped  --icon-none ﱙ
 tail = true
 label = %output%
 
@@ -336,7 +336,7 @@ label = %percentage_used%%
 
 [module/updates-arch]
 type = custom/script
-exec = /home/jnieland/.config/polybar/polybar-scripts/polybar-scripts/updates-arch/updates-arch.sh
+exec = ~/.config/polybar/polybar-scripts/polybar-scripts/updates-arch/updates-arch.sh
 format-underline = ${colors.col13}
 interval = 600
 label = "ﮮ %output%"

@@ -3,6 +3,14 @@ It seems something everyone's doing: keep everything (dot / config files) togeth
 
 Everything below assumes this repo is cloned in ~/.dotfiles. 
 
+## Dependencies
+
+- zsh
+- nerd-fonts-complete
+- zsh-theme-powerlevel9k
+- compton-conf (optional)
+- compton-git (optional)
+
 ## Setup
 
 Below are the symbolic links needed to hook up .dotfiles to the default locations (Arch Linux) of the dotfiles.
@@ -15,6 +23,8 @@ ln -s ~/.dotfiles/qutebrowser ~/.config/qutebrowser
 ln -s ~/.dotfiles/reloadcompton.sh ~/.config/reloadcompton.sh
 ln -s ~/.dotfiles/rofi ~/.config/rofi
 ```
+
+The i3 setup uses ~/.fehbg to set its background. Plan accordingly.
 
 ## Subtrees
 
