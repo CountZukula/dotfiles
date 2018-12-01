@@ -10,6 +10,10 @@ Everything below assumes this repo is cloned in ~/.dotfiles.
 - zsh-theme-powerlevel9k
 - compton-conf (optional)
 - compton-git (optional)
+- mpris (playerctl integration - `pip3 install --user dbus-python pygobject`)
+  - install `mpv` 
+  - in mpsyt: `set player mpv`
+  - profits
 
 ## Setup
 
