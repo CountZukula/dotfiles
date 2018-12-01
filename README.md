@@ -48,3 +48,13 @@ Create a `~/.terminfo/` entry so we can use the new TERM info.
 ```
 tic xterm-256color-italic.terminfo
 ```
+
+
+## Additional applications
+
+### Ranger - terminal file manager
+- yay ranger
+- `yay urxvt-unicode-pixbuf` to enable picture previews
+
+### Qutebrowser
+vim style browsing
