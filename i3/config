@@ -303,6 +303,8 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
+# start multi touch support
+exec --no-startup-id libinput-gestures-setup start
 
 # start polybar 
 exec_always --no-startup-id ~/.config/polybar/launch-multi.sh 
