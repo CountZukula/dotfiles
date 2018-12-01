@@ -574,9 +574,6 @@ if zplug check "bhilburn/powerlevel9k"; then
     # ORIGINAL
     P9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
     P9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time)
-    
-
-    P9K_MODE='nerdfont-complete'
 
     P9K_VCS_GIT_GITHUB_ICON=""
     P9K_VCS_GIT_BITBUCKET_ICON=""
