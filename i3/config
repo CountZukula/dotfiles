@@ -231,6 +231,10 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+# Scratchpad
+bindsym $mod+Shift+BackSpace move scratchpad
+bindsym $mod+BackSpace scratchpad show
+
 # generic switch
 #bindcode 49+34 workspace $ws9
 #bindsym $mod+grave workspace $ws9
