@@ -84,7 +84,9 @@ alias time='time -p ' # -p for POSIX output
 #                                   Plugins
 # =============================================================================
 # Check if zplug is installed
-[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
+#[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
+
+# load zplug
 source ~/.zplug/init.zsh
 
 # zplug
