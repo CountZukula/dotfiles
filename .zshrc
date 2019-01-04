@@ -84,7 +84,7 @@ alias time='time -p ' # -p for POSIX output
 #                                   Plugins
 # =============================================================================
 # Check if zplug is installed
-#[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
+[ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
 
 # load zplug
 source ~/.zplug/init.zsh
@@ -723,3 +723,7 @@ zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # vim: ft=zsh sw=4 sts=4 et
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/jnieland/.sdkman"
+[[ -s "/home/jnieland/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jnieland/.sdkman/bin/sdkman-init.sh"
