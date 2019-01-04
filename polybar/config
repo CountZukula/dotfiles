@@ -95,7 +95,7 @@ monitor = ${env:MONITOR:eDP-1}
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-left = i3  
 modules-center = temperature battery xkeyboard memory cpu eth filesystem updates-arch
-modules-right = wlan powermenu 
+modules-right = wlan wlantwo powermenu 
 
 ; TRAY MANAGEMENT
 ;tray-position = right
@@ -341,6 +341,28 @@ format-underline = ${colors.col13}
 interval = 600
 label = "ﮮ %output%"
 
+[module/wlantwo]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %{A1:networkmanager_dmenu:}%essid%%{A}
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
 [module/wlan]
 type = internal/network
 interface = wlp2s0
@@ -461,10 +483,15 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
+time-format = %H:%M
+
+label-charging =  %time% %percentage%%
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
 format-charging-underline = ${colors.underline-battery}
 
+
+label-discharging =  %time% %percentage%%
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
