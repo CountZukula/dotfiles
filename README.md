@@ -58,3 +58,9 @@ tic xterm-256color-italic.terminfo
 
 ### Qutebrowser
 vim style browsing
+
+### entr
+look this up, should be really useful
+
+### autorandr
+Together with xrandr, this allows you to automatically set up multi-monitor setups and detect changes in the environment.
