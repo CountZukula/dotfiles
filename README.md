@@ -15,6 +15,7 @@ Everything below assumes this repo is cloned in ~/.dotfiles.
   - in mpsyt: `set player mpv`
   - profits
 - networkmanager-dmenu (no need for nm-applet)
+- rofi-dmenu (optional, makes rofi take over role of dmenu)
 
 ## Setup
 
