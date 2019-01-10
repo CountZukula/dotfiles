@@ -95,7 +95,7 @@ monitor = ${env:MONITOR:eDP-1}
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-left = i3  
 modules-center = temperature battery xkeyboard memory cpu eth filesystem updates-arch
-modules-right = wlan wlantwo powermenu 
+modules-right = wlan wlantwo vpn powermenu 
 
 ; TRAY MANAGEMENT
 ;tray-position = right
@@ -157,6 +157,15 @@ label-indicator-underline = ${colors.underline-keyboard}
 
 cursor-click = pointer
 
+
+[module/vpn]
+type = custom/script
+exec = nmcli | grep "VPN connection" | sed -e "s/VPN connection//g"   
+exec-if = pgrep -x openvpn
+interval = 5
+format-underline = #268bd2
+format-prefix = " "
+format-prefix-foreground = ${colors.col1}
 
 
 [module/filesystem]

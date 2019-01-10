@@ -18,6 +18,7 @@ Everything below assumes this repo is cloned in ~/.dotfiles.
 - notifications...
   - libnotify
   - dunst
+- rofi-dmenu (optional, makes rofi take over role of dmenu)
 
 ## Setup
 
