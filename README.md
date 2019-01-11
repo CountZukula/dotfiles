@@ -15,6 +15,9 @@ Everything below assumes this repo is cloned in ~/.dotfiles.
   - in mpsyt: `set player mpv`
   - profits
 - networkmanager-dmenu (no need for nm-applet)
+- notifications...
+  - libnotify
+  - dunst
 - rofi-dmenu (optional, makes rofi take over role of dmenu)
 
 ## Setup
@@ -66,3 +69,6 @@ look this up, should be really useful
 
 ### autorandr
 Together with xrandr, this allows you to automatically set up multi-monitor setups and detect changes in the environment.
+
+### sxiv
+Image viewer with lots of features.
