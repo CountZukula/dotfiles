@@ -56,7 +56,7 @@ tic xterm-256color-italic.terminfo
 
 ### Ranger - terminal file manager
 - yay ranger
-- `yay urxvt-unicode-pixbuf` to enable picture previews
+- `yay rxvt-unicode-pixbuf` to enable picture previews
 
 ### Qutebrowser
 vim style browsing

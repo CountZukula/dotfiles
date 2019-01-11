@@ -14,7 +14,7 @@ for_window [class="^.*"] border pixel 2
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 
 # fix citrix windows
-# for_window [class="Wfica_Seamless"] floating enable
+for_window [class="Wfica_Seamless"] floating enable
 
 # automatically assign programs to workspace
 assign [class="Chromium"] 1

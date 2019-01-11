@@ -22,7 +22,7 @@ echo "{$background}"
 lock() {
 	# --screen 1
 	# --keylayout 2
-i3lock -i /home/jnieland/pictures/wallpapers/wallhaven-desert.jpg --blur 5 --clock --indicator \
+i3lock -i /home/jnieland/pictures/great-wall-namib.jpg --blur 5 --clock --indicator \
 	--insidevercolor=$background   \
 	--ringvercolor=$col4     \
 	\
