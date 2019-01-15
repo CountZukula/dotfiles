@@ -54,6 +54,15 @@ floating_modifier $mod
 bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $mod+Return exec urxvt 
 
+# screenshotting
+# Desktop screenshot
+#bindsym --release Print exec "scrot ~/Bilder/Bildschirmfotos/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
+# Choose window
+#bindsym --release Mod1+Sys_Req exec "import -window `xwininfo | awk '/.*Window id:.*/ {print $4}'` ~/Bilder/Bildschirmfotos/$(date --iso-8601='seconds').png"
+# Selection screenshot
+#bindsym --release Shift+Print exec "scrot ~/Bilder/Bildschirmfotos/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'" 
+bindsym --release Print exec /home/jnieland/.config/i3/screenshot.sh 
+
 # kill focused window
 bindsym $mod+Shift+q kill
 

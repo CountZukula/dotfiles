@@ -20,7 +20,7 @@ zsh_wifi_signal(){
 #export TERM="xterm-256color"
 export TERM="xterm-256color-italic"
 export SHELL="/bin/zsh"
-export EDITOR="nvim"
+export EDITOR="vim"
 
 # Fix Locale
 export LANG="en_US.UTF-8"
