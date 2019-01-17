@@ -94,8 +94,8 @@ monitor = ${env:MONITOR:eDP-1}
 
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-left = i3  
-modules-center = temperature battery xkeyboard memory cpu eth filesystem updates-arch
-modules-right = wlan wlantwo vpn powermenu 
+modules-center = temperature battery xkeyboard memory cpu filesystem updates-arch
+modules-right = net0 wifi0 vpn powermenu 
 
 ; TRAY MANAGEMENT
 ;tray-position = right
@@ -350,14 +350,16 @@ format-underline = ${colors.col13}
 interval = 600
 label = "ﮮ %output%"
 
-[module/wlantwo]
+[module/wifi0]
 type = internal/network
-interface = wlp3s0
+interface = wifi0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %{A1:networkmanager_dmenu:}%essid%%{A}
+;label-connected = %{A1:networkmanager_dmenu:}%essid%%{A}
+;  
+label-connected = "%{A1:networkmanager_dmenu:}%essid%%{A} %downspeed:3% %upspeed:3%"
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -372,38 +374,16 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/wlan]
+[module/net0]
 type = internal/network
-interface = wlp2s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %{A1:networkmanager_dmenu:}%essid%%{A}
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 =  
-ramp-signal-3 =  
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = enp0s20f0u1u2
+interface = net0
 interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.icon-color}
 ;label-connected = %local_ip%
-label-connected = "%downspeed:3%"
+label-connected = "%downspeed:3% %upspeed:3%"
 label-connected-foreground = ${colors.foreground}
 
 format-disconnected =
