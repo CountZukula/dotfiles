@@ -119,6 +119,18 @@ mode "$mode_xkbmap" {
 }
 bindsym $mod+Ctrl+k mode "$mode_xkbmap"
 
+# do a nice menu for custom launches 
+set $mode_launch (a) Default start-up
+mode "$mode_launch" {
+	# These are all the default programs launching at startup.
+	bindsym a exec slack, exec mattermost-desktop, exec thunderbird, mode "default"
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+F10 mode "$mode_launch"
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -139,10 +151,7 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
+# move focused window bindsym $mod+Shift+h move left bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 

@@ -20,6 +20,11 @@ URxvt*loginShell:  false
 URxvt.font: xft:FuraCode Nerd Font Mono:style=Retina:pixelsize=12, \
 	-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
 
+! Give us a nice cursor then
+!Xcursor.theme: redglass
+Xcursor.theme: Breeze
+Xcursor.size: 16
+
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
 ! Description: Retro groove colorscheme generalized
