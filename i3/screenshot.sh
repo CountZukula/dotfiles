@@ -5,5 +5,5 @@ TARGETDIR=/home/jnieland/pictures/screenshots
 TARGETFILE=screenshot.$(date '+%Y.%m.%d.%H.%M.%S').png
 # start the process
 notify-send ' Screenshot' 'Select area...' -u normal
-scrot -s $TARGETDIR/$TARGETFILE -e 'notify-send -i '$TARGETDIR/$TARGETFILE' "Screenshot" "Created file: "'$TARGETDIR/$TARGETFILE
+scrot -s $TARGETDIR/$TARGETFILE -e 'notify-send -i '$TARGETDIR/$TARGETFILE' "Screenshot" "Created file: "'$TARGETDIR/$TARGETFILE' && xclip -selection clipboard -target image/png -i '$TARGETDIR/$TARGETFILE 
 
