@@ -72,3 +72,6 @@ Together with xrandr, this allows you to automatically set up multi-monitor setu
 
 ### sxiv
 Image viewer with lots of features.
+
+### ciinema
+Record a terminal session and replay it in a video-like fashion: https://asciinema.org/
