@@ -1,7 +1,6 @@
 set nocompatible " be iMproved, required
 filetype off     " required
 
-
 " some generic options... :help them if you want
 " also check https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 set laststatus=2
@@ -35,8 +34,13 @@ Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Syntax checking for various formats
+Plug 'scrooloose/syntastic'
 " always load this last. supposed to make vim work with nerdfonts
 Plug 'ryanoasis/vim-devicons'
+" adds the 'c' command to do things with brackets,quotes, ... try `cs"'` on
+" "blabla"
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " show syntax highlighting
@@ -74,6 +78,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" AIRLINE settings
 " symbols section for unicode/airline symbols
 " air-line (status line below, using fancy symbols)
 let g:airline_powerline_fonts = 1
@@ -101,3 +106,12 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" SYNTASTIC settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
