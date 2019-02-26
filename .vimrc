@@ -36,11 +36,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Syntax checking for various formats
 Plug 'scrooloose/syntastic'
-" always load this last. supposed to make vim work with nerdfonts
-Plug 'ryanoasis/vim-devicons'
 " adds the 'c' command to do things with brackets,quotes, ... try `cs"'` on
 " "blabla"
 Plug 'tpope/vim-surround'
+" adds fuzzy file finder to vim (do <c-p>)
+Plug 'kien/ctrlp.vim'
+" always load this last. supposed to make vim work with nerdfonts
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " show syntax highlighting
@@ -115,3 +117,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" MARKDOWN PREVIEW settings
+" specify browser to open preview page
+" default: ''
+let g:mkdp_browser = 'qutebrowser'
