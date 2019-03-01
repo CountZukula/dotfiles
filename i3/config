@@ -90,7 +90,8 @@ bindsym $mod+d exec ~/.config/rofi/runrofi.sh
 bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # do a nice menu with mode
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+# lock / logout / sleep / hibernate / restart / poweroff
+set $mode_system  l e s鈴 h rﰇ וּsﮤ
 mode "$mode_system" {
 	bindsym l exec --no-startup-id /home/jnieland/.config/i3/i3exit.sh lock, mode "default"
 	bindsym e exec --no-startup-id /home/jnieland/.config/i3/i3exit.sh logout, mode "default"
@@ -150,7 +151,7 @@ mode "$mode_audio" {
 bindsym $mod+F11 mode "$mode_audio"
 
 # do a nice menu for custom launches 
-set $mode_launch (a) Default start-up
+set $mode_launch  adefault start-up 
 mode "$mode_launch" {
 	# These are all the default programs launching at startup.
 	bindsym a exec slack, exec mattermost-desktop, exec thunderbird, mode "default"
