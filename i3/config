@@ -121,6 +121,34 @@ mode "$mode_xkbmap" {
 }
 bindsym $mod+Ctrl+k mode "$mode_xkbmap"
 
+# this is a menu dedicated to audio stuff
+# some nice symbols to try here: 0|    論b籠i錄  
+set $mode_audio    - + 0 y 
+mode "$mode_audio" {
+	# Pulse Audio controls
+	# Increase sound volume
+	bindsym plus exec --no-startup-id pactl set-sink-volume 0 +5% 
+	# Decrease sound volume
+	bindsym minus exec --no-startup-id pactl set-sink-volume 0 -5%
+	# Mute sound
+	bindsym 0 exec --no-startup-id pactl set-sink-mute 0 toggle 
+	
+	# Start mps-youtube
+	bindsym y exec --no-startup-id urxvt -e mpsyt, mode "default" # start terminal youtube player
+
+	# Media player controls
+	# Toggle pause/play 
+	bindsym space exec playerctl play-pause
+	#bindsym XF86AudioPause exec playerctl pause
+	#bindsym XF86AudioNext exec playerctl next
+	#bindsym XF86AudioPrev exec playerctl previous
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+F11 mode "$mode_audio"
+
 # do a nice menu for custom launches 
 set $mode_launch (a) Default start-up
 mode "$mode_launch" {
@@ -312,7 +340,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # Edit config files
@@ -324,7 +351,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 bindsym $mod+XF86AudioPlay exec --no-startup-id urxvt -e mpsyt # start terminal youtube player
-bindsym $mod+F11 exec --no-startup-id urxvt -e mpsyt # start terminal youtube player
+#bindsym $mod+F11 exec --no-startup-id urxvt -e mpsyt # start terminal youtube player
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
