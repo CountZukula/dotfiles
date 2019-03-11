@@ -151,10 +151,12 @@ mode "$mode_audio" {
 bindsym $mod+F11 mode "$mode_audio"
 
 # do a nice menu for custom launches 
-set $mode_launch  adefault start-up 
+set $mode_launch  adefault start-up bnoise-fix 
 mode "$mode_launch" {
 	# These are all the default programs launching at startup.
 	bindsym a exec slack, exec mattermost-desktop, exec thunderbird, mode "default"
+	# This fixes audio noise
+	bindsym b exec sudo hda-verb /dev/snd/hwC*D0 0x1d SET_PIN_WIDGET_CONTROL 0x0, mode "default"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
