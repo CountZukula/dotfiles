@@ -1,0 +1,3 @@
+#!/bin/bash
+# Show all the keybindings for rofi
+rofi -show keys

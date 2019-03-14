@@ -94,7 +94,7 @@ monitor = ${env:MONITOR:eDP-1}
 
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-left = i3  
-modules-center = temperature battery xkeyboard memory cpu filesystem updates-arch
+modules-center = temperature battery xkeyboard memory cpu filesystem updates-arch reboot-check
 modules-right = net1 wifi0 vpn powermenu 
 
 ; TRAY MANAGEMENT
@@ -355,6 +355,14 @@ exec = ~/.config/polybar/polybar-scripts/polybar-scripts/updates-arch/updates-ar
 format-underline = ${colors.col13}
 interval = 600
 label = "ﮮ %output%"
+
+[module/reboot-check]
+type = custom/script
+exec = ~/bin/reboot.check
+format-underline = ${colors.col1}
+format-foreground = ${colors.col1}
+interval = 30 
+label = ""
 
 [module/wifi0]
 type = internal/network
