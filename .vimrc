@@ -11,6 +11,17 @@ set showmatch " set parens to match each other
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
 
+" some auto indentation 
+syntax enable
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" show syntax highlighting (this might be superfluous with the above...)
+" syntax on
+
+
 " vim-plug - download if not there yet
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -45,8 +56,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-" show syntax highlighting
-syntax on
 
 set guifont=FuraCode\ Nerd\ Font\ 11
 

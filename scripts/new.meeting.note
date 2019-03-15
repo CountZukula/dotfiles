@@ -1,0 +1,13 @@
+#!/bin/bash
+# take a single parameter and use that as the meeting name (this.is.a.meeting.name)
+# it creates a new file in ~/nextcloud/meetings/ with proper date and name
+# This script requires 'xclip'. It copies the primary selection (when you do a selection of text) to the clipboard. 
+PREFIX=$(date +"%Y-%m-%d")
+FILENAME=$PREFIX-$1
+FOLDER="$HOME/nextcloud/meetings/"
+FILEPATH=$FOLDER$FILENAME.md
+# create the file
+touch $FILEPATH
+# give some feedback about the creation
+echo Created new file: $(ls $FILEPATH)
+
