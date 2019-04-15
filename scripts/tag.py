@@ -7,7 +7,7 @@ import os.path
 
 # defaults
 HOME = str(Path.home())
-TAG_PARENT_FOLDER = HOME + '/.tag.py'
+TAG_PARENT_FOLDER = os.path.join(HOME, '.tag.py')
 
 # check if the tag folder exists
 if not os.path.isdir(TAG_PARENT_FOLDER):
@@ -37,7 +37,7 @@ parser.add_argument('-t', '--tag', dest='tag', help='tag(s) to be added to the g
 args = parser.parse_args()
 
 # check if we have tags
-if args.tag is None or not len(args.tag)>0:
+if args.tag is None or not len(args.tag) > 0:
     sys.exit("At least one tag is expected, provide one with '-t sometag'")
 
 # lower case all tags
@@ -73,10 +73,10 @@ for tag in args.tag:
     os.makedirs(TAG_FOLDER, exist_ok=True)
     # now create a link to the files in this new tag folder
     for file in to_tag:
-        dest = TAG_FOLDER + "/" + os.path.basename(file)
-        src = os.getcwd()+"/"+file
+        dest = os.path.join(TAG_FOLDER, os.path.basename(file))
+        src = os.path.join(os.getcwd(), file)
         if os.path.exists(dest):
-            print('Not making link "'+dest+'", already exists.')
+            print('Not making link "' + dest + '", already exists.')
         else:
             os.symlink(src, dest, os.path.isdir(src))
             tag_count = tag_count + 1
