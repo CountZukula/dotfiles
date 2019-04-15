@@ -29,7 +29,7 @@ Use hierarchical tags for added structure (tag1/tag2). All tags are saved in you
 # parser.add_argument('integers', metavar='N', type=int, nargs='+',
 #                     help='an integer for the accumulator')
 parser.add_argument('file', type=str, nargs='+')
-parser.add_argument('-t', dest='tag', help='tag(s) to be added to the given file(s)', nargs='+')
+parser.add_argument('-t', '--tag', dest='tag', help='tag(s) to be added to the given file(s)', nargs='+')
 # parser.add_argument('--sum', dest='accumulate', action='store_const',
 #                     const=sum, default=max,
 #                     help='sum the integers (default: find the max)')
@@ -74,10 +74,11 @@ for tag in args.tag:
     # now create a link to the files in this new tag folder
     for file in to_tag:
         dest = TAG_FOLDER + "/" + os.path.basename(file)
+        src = os.getcwd()+"/"+file
         if os.path.exists(dest):
             print('Not making link "'+dest+'", already exists.')
         else:
-            os.symlink(file, dest, os.path.isdir(file))
+            os.symlink(src, dest, os.path.isdir(src))
             tag_count = tag_count + 1
 
 # Finish it
