@@ -52,7 +52,12 @@ for file in args.file:
         sys.exit("file '" + file + "' does not exist.")
     # if it's a file, use it as such (it will be tagged)
     if os.path.isfile(file) or os.path.isdir(file):
-        to_tag.append(file)
+        # if the file is absolute, just add it as is
+        if os.path.isabs(file):
+            to_tag.append(file)
+        # if the file is relative, make sure we use the current working directory
+        else:
+            to_tag.append(os.path.join(os.getcwd(), file))
     # use this if the 'recursive flag' is set
     # TODO implement a recursive flag
     # # if it's a directory, use the contents of the directory
@@ -74,7 +79,7 @@ for tag in args.tag:
     # now create a link to the files in this new tag folder
     for file in to_tag:
         dest = os.path.join(TAG_FOLDER, os.path.basename(file))
-        src = os.path.join(os.getcwd(), file)
+        src = file
         if os.path.exists(dest):
             print('Not making link "' + dest + '", already exists.')
         else:
