@@ -387,6 +387,10 @@ exec_always --no-startup-id sh ~/.fehbg
 # start compton: compositor that allows, for example, transparency
 exec --no-startup-id compton 
 
+# start greenclip, this somehow fails to start at launch (sometimes?)
+exec --no-startup-id systemctl --user start greenclip
+
+
 # reload the walpaper / color configuratin using pywal 
 # exec --no-startup-id wal -R -q 
 # change the wallpaper exec_always feh --bg-scale ~/Documents/private/img/mars-wallpaper-23.jpg

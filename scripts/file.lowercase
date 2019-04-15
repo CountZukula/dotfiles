@@ -1,0 +1,9 @@
+#!/bin/bash
+FILE=$1
+if [ ! -f $FILE ]; then
+    echo "File does not exist."
+else
+    echo "Lower casing file."
+    LOWER=$(echo $FILE | awk '{print(tolower($0))}')
+    mv -i $FILE $LOWER 
+fi

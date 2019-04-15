@@ -47,6 +47,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Syntax checking for various formats
 Plug 'scrooloose/syntastic'
+" This adds kotlin syntax
+Plug 'udalov/kotlin-vim'
 " adds the 'c' command to do things with brackets,quotes, ... try `cs"'` on
 " "blabla"
 Plug 'tpope/vim-surround'
@@ -54,6 +56,7 @@ Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 " always load this last. supposed to make vim work with nerdfonts
 Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 
