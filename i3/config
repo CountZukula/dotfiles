@@ -366,8 +366,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Screen brightness keys
 # (This should work for both acpilight or xbacklight.)
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 # start multi touch support
 exec --no-startup-id libinput-gestures-setup start

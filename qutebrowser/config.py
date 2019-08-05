@@ -420,7 +420,7 @@ c.colors.tabs.selected.odd.fg = white
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
 ## Type: QtColor
-c.colors.webpage.bg = white
+c.colors.webpage.bg = '#FFFFFF'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -1503,7 +1503,7 @@ c.completion.cmd_history_max_items = 10000
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'g': 'https://google.com/search?q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
