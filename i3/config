@@ -108,6 +108,23 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+F12 mode "$mode_system"
 
 # do a nice menu for keyboard layouts
+set $mode_redshift Redshift <2,3,4,5,6,7,8>k 
+mode "$mode_redshift" {
+	bindsym 2 exec --no-startup-id redshift -P -O 2000
+	bindsym 3 exec --no-startup-id redshift -P -O 3000
+	bindsym 4 exec --no-startup-id redshift -P -O 4000
+	bindsym 5 exec --no-startup-id redshift -P -O 5000
+	bindsym 6 exec --no-startup-id redshift -P -O 6000
+	bindsym 7 exec --no-startup-id redshift -P -O 7000
+	bindsym 8 exec --no-startup-id redshift -P -O 8000
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+F9 mode "$mode_redshift"
+
+# do a nice menu for keyboard layouts
 set $mode_xkbmap Layout (a) us, (b) us-intl (c) us-altgr (d) gb (e) gb-intl
 mode "$mode_xkbmap" {
 	bindsym a exec --no-startup-id setxkbmap us, mode "default"
@@ -151,14 +168,15 @@ mode "$mode_audio" {
 bindsym $mod+F11 mode "$mode_audio"
 
 # do a nice menu for custom launches 
-set $mode_launch  adefault start-up bnoise-fix ctriple
+set $mode_launch  adefault start-up bnoise-fix cdual
 mode "$mode_launch" {
 	# These are all the default programs launching at startup.
 	bindsym a exec slack, exec mattermost-desktop, exec thunderbird, mode "default"
 	# This fixes audio noise
 	bindsym b exec sudo hda-verb /dev/snd/hwC*D0 0x1d SET_PIN_WIDGET_CONTROL 0x0, mode "default"
 	# This bypasses weird xrandr bug, resets to single display, then goes back to triple monitor setup (use autorandr profile here, needs to be set up in advance)
-	bindsym c exec xrandr --output DP1-1 --mode 1920x1080, exec autorandr triple, mode "default"
+	#bindsym c exec xrandr --output eDP1 --mode 2560x1440, exec autorandr triple, mode "default"
+	bindsym c exec autorandr dual2k, mode "default"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"

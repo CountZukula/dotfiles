@@ -18,6 +18,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" numbering options
+set number
+set relativenumber
+
 " show syntax highlighting (this might be superfluous with the above...)
 " syntax on
 
@@ -56,12 +60,24 @@ Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 " always load this last. supposed to make vim work with nerdfonts
 Plug 'ryanoasis/vim-devicons'
+" enable typescript 
+Plug 'leafgarland/typescript-vim'
+" add auto completion for various languages
+Plug 'Valloric/YouCompleteMe'
+" enable copy to clipboard ('cpiw', 'cP', ...)
+Plug 'christoomey/vim-system-copy'
 
 call plug#end()
 
 
+
 set guifont=FuraCode\ Nerd\ Font\ 11
 
+" overwrite the clipboard command to use xclip
+let g:system_copy#copy_command='xclip -sel clipboard'
+let g:system_copy#paste_command='xclip -sel clipboard -o'
+
+" set up the color scheme
 colorscheme gruvbox  " cool color scheme
 :let g:airline_theme='gruvbox'
 :set background=dark
