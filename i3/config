@@ -34,7 +34,7 @@ set $wsright "12:"
 
 # automatically assign programs to workspace
 # using workspace names here, otherwise doesn't work as expected
-assign [class="Chromium"] $ws1
+# assign [class="Chromium"] $ws1
 assign [class="Thunderbird"] $ws2
 assign [class="Slack"] $ws9
 assign [class="Mattermost"] $ws9
@@ -107,7 +107,7 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+F12 mode "$mode_system"
 
-# do a nice menu for keyboard layouts
+# do a nice menu for redshift values 
 set $mode_redshift Redshift <2,3,4,5,6,7,8>k 
 mode "$mode_redshift" {
 	bindsym 2 exec --no-startup-id redshift -P -O 2000
@@ -125,13 +125,14 @@ mode "$mode_redshift" {
 bindsym $mod+F9 mode "$mode_redshift"
 
 # do a nice menu for keyboard layouts
-set $mode_xkbmap Layout (a) us, (b) us-intl (c) us-altgr (d) gb (e) gb-intl
+set $mode_xkbmap Layout (a) us, (b) us-intl (c) us-altgr (d) gb (e) gb-intl (f) dvorak
 mode "$mode_xkbmap" {
 	bindsym a exec --no-startup-id setxkbmap us, mode "default"
 	bindsym b exec --no-startup-id setxkbmap us intl, mode "default" 
 	bindsym c exec --no-startup-id setxkbmap us altgr-intl, mode "default" 
 	bindsym d exec --no-startup-id setxkbmap gb, mode "default" 
 	bindsym e exec --no-startup-id setxkbmap gb intl, mode "default" 
+	bindsym f exec --no-startup-id setxkbmap dvorak, mode "default" 
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"

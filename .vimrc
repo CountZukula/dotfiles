@@ -14,9 +14,11 @@ set hlsearch " highlight matches
 " some auto indentation 
 syntax enable
 set smartindent
-set tabstop=4
+set tabstop=8
 set shiftwidth=4
 set expandtab
+set smarttab
+set softtabstop=0
 
 " numbering options
 set number
@@ -66,6 +68,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'Valloric/YouCompleteMe'
 " enable copy to clipboard ('cpiw', 'cP', ...)
 Plug 'christoomey/vim-system-copy'
+" the left-most tree structure
+Plug 'scrooloose/nerdtree'
+
 
 call plug#end()
 
@@ -107,6 +112,9 @@ highlight Comment cterm=italic
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" the way to open the nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 " AIRLINE settings
 " symbols section for unicode/airline symbols
