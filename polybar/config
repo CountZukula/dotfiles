@@ -126,13 +126,20 @@ monitor = ${env:MONITOR:eDP-1}
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-right = pulseaudio
 modules-center = player-mpris-tail
-modules-left = date 
+modules-left = date info-hackspeed
 
 [module/player-mpris-tail]
 type = custom/script
 exec = ~/.config/polybar/polybar-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {title}' --icon-playing  --icon-paused  --icon-stopped  --icon-none ﱙ
 tail = true
 label = %output%
+
+[module/info-hackspeed]
+type = custom/script
+format-prefix = " "
+format-prefix-foreground = ${colors.icon-color}
+exec = ~/.config/polybar/polybar-scripts/polybar-scripts/info-hackspeed/info-hackspeed.sh
+tail = true
 
 [module/xwindow]
 type = internal/xwindow

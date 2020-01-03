@@ -169,7 +169,7 @@ mode "$mode_audio" {
 bindsym $mod+F11 mode "$mode_audio"
 
 # do a nice menu for custom launches 
-set $mode_launch  adefault start-up bnoise-fix cdual
+set $mode_launch  adefault start-up bnoise-fix cdual dhorizontal
 mode "$mode_launch" {
 	# These are all the default programs launching at startup.
 	bindsym a exec slack, exec mattermost-desktop, exec thunderbird, mode "default"
@@ -178,6 +178,8 @@ mode "$mode_launch" {
 	# This bypasses weird xrandr bug, resets to single display, then goes back to triple monitor setup (use autorandr profile here, needs to be set up in advance)
 	#bindsym c exec xrandr --output eDP1 --mode 2560x1440, exec autorandr triple, mode "default"
 	bindsym c exec autorandr dual2k, mode "default"
+
+	bindsym d exec autorandr horizontal, mode "default"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
