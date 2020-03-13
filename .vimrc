@@ -65,7 +65,7 @@ Plug 'ryanoasis/vim-devicons'
 " enable typescript 
 Plug 'leafgarland/typescript-vim'
 " add auto completion for various languages
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " enable copy to clipboard ('cpiw', 'cP', ...)
 Plug 'christoomey/vim-system-copy'
 " the left-most tree structure

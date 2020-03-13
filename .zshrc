@@ -78,6 +78,7 @@ alias ccat="pygmentize -O style=monokai -f 256 -g"
 alias dig="dig +nocmd any +multiline +noall +answer"
 alias prettyjson='python -m json.tool'
 alias new.note=''
+alias tor="transmission-cli -w . -er -p 0"
 
 disable -r time       # disable shell reserved word
 alias time='time -p ' # -p for POSIX output
