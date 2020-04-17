@@ -38,6 +38,7 @@ set $wsright "12:"
 assign [class="Thunderbird"] $ws2
 assign [class="Slack"] $ws9
 assign [class="Mattermost"] $ws9
+assign [class="Hamsket"] $ws9
 assign [class="Wfica_Seamless"] $ws10
 #assign [class="jetbrains-idea"] 7
 #assign [class="jetbrains-webstorm"] 8
@@ -172,7 +173,7 @@ bindsym $mod+F11 mode "$mode_audio"
 set $mode_launch  adefault start-up bnoise-fix cdual dhorizontal
 mode "$mode_launch" {
 	# These are all the default programs launching at startup.
-	bindsym a exec slack, exec mattermost-desktop, exec thunderbird, mode "default"
+	bindsym a exec hamsket, exec thunderbird, mode "default"
 	# This fixes audio noise
 	bindsym b exec sudo hda-verb /dev/snd/hwC*D0 0x1d SET_PIN_WIDGET_CONTROL 0x0, mode "default"
 	# This bypasses weird xrandr bug, resets to single display, then goes back to triple monitor setup (use autorandr profile here, needs to be set up in advance)
