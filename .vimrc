@@ -2,7 +2,6 @@
 set runtimepath+=~/.vim
 execute 'runtime!' 'vimrc.d/*'
 
-" Overwrite the clipboard command to use xclip
 let g:system_copy#copy_command='xclip -sel clipboard'
 let g:system_copy#paste_command='xclip -sel clipboard -o'
 
