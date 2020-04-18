@@ -94,7 +94,7 @@ monitor = ${env:MONITOR:eDP-1}
 
 ;unused modules - mpd xbacklight backlight-acpi alsa 
 modules-left = i3  
-modules-center = temperature battery xkeyboard memory cpu filesystem updates-arch reboot-check xbacklight
+modules-center = temperature battery xkeyboard memory cpu filesystem updates-arch reboot-check xbacklight top-process
 modules-right = net1 wifi0 vpn powermenu 
 
 ; TRAY MANAGEMENT
@@ -141,6 +141,15 @@ format-prefix-foreground = ${colors.icon-color}
 exec = ~/.config/polybar/polybar-scripts/polybar-scripts/info-hackspeed/info-hackspeed.sh
 tail = true
 
+[module/top-process]
+type = custom/script
+format-prefix = " "
+format-prefix-foreground = ${colors.icon-color}
+format-underline = ${colors.alert}
+interval = 5
+exec = ~/.dotfiles/scripts/top.process.sh
+tail = true
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -178,15 +187,11 @@ format-prefix-foreground = ${colors.col1}
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
+mount-1 = /mnt/ext4
 label-mounted = %{F#0a81f5}%mountpoint%%{F-} %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-
-
-
 
 [module/bspwm]
 type = internal/bspwm
@@ -363,9 +368,11 @@ label = %percentage_used%%
 [module/updates-arch]
 type = custom/script
 exec = ~/.config/polybar/polybar-scripts/polybar-scripts/updates-arch/updates-arch.sh
+format-prefix = " "
+format-prefix-foreground = ${colors.icon-color}
 format-underline = ${colors.col13}
 interval = 600
-label = "ﮮ %output%"
+label = "%output%"
 
 [module/reboot-check]
 type = custom/script
