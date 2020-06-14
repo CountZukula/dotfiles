@@ -17,7 +17,6 @@ zsh_wifi_signal(){
 #                                   Variables
 # =============================================================================
 # Common ENV variables
-#export TERM="xterm-256color"
 export TERM="xterm-256color-italic"
 export SHELL="/bin/zsh"
 export EDITOR="vim"
